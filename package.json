@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "site:build": "python3 site/build.py",
+    "site:dev": "python3 -m http.server 8080 --directory site"
   },
   "dependencies": {
     "next": "16.4.2",

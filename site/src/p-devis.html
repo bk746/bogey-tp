@@ -1,0 +1,67 @@
+<section class="sec" id="devis">
+  <div class="wrap qwrap">
+    <aside class="q-side">
+      <div class="kick" style="color:rgba(255,255,255,.75)"><i></i>Devis gratuit</div>
+      <h2 class="h2">Parlez-nous<br>de votre <em>projet.</em></h2>
+      <p>4 étapes, environ 2 minutes. On vous rappelle sur le créneau de votre choix.</p>
+      <div class="prog" id="prog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="prog-l" id="progL" aria-live="polite">Étape 1 sur 4 · Type de travaux</div>
+      <p class="dec"><svg><use href="#i-check"/></svg>Assurance décennale : attestation jointe au devis <span class="tbc">À confirmer</span></p>
+      <div class="call-big"><small>Plus rapide ? Appelez</small><a href="tel:+33647823216" data-loc="devis">06 47 82 32 16</a></div>
+    </aside>
+    <form class="q" id="q" novalidate>
+      <fieldset class="on" data-label="Type de travaux">
+        <legend>Quel type de travaux ?</legend>
+        <p class="hint">Choisissez ce qui correspond le mieux, on affinera ensemble.</p>
+        <div class="opts" id="types"></div>
+        <p class="err-msg" data-err="type" role="alert"></p>
+        <div class="f-nav"><span></span><button class="btn btn-or btn-lg" type="button" data-next>Continuer →</button></div>
+        <p class="reass">Gratuit · Sans engagement · Rappel sous 24–48 h</p>
+      </fieldset>
+      <fieldset data-label="Vous &amp; le lieu">
+        <legend>Vous êtes…</legend>
+        <p class="hint">Et où se trouve le chantier ?</p>
+        <div class="opts" style="margin-bottom:22px">
+          <label class="opt"><input type="radio" name="profil" value="Particulier" checked><span><svg><use href="#i-house"/></svg>Particulier</span></label>
+          <label class="opt"><input type="radio" name="profil" value="Professionnel / collectivité"><span><svg><use href="#i-pro"/></svg>Professionnel / collectivité</span></label>
+        </div>
+        <div class="fld" data-f="commune"><label for="commune">Commune du chantier *</label><input id="commune" name="commune" autocomplete="address-level2" placeholder="Ex. Grésy-sur-Aix" list="dl-communes"><datalist id="dl-communes"></datalist><p class="err-msg" role="alert"></p></div>
+        <div class="f-nav"><button class="back" type="button" data-prev>← Retour</button><button class="btn btn-or btn-lg" type="button" data-next>Continuer →</button></div>
+        <p class="reass">Gratuit · Sans engagement · Rappel sous 24–48 h</p>
+      </fieldset>
+      <fieldset data-label="Votre projet">
+        <legend>Décrivez le projet</legend>
+        <p class="hint">Surface, accès au terrain, délai souhaité… Tout ce qui nous aide à chiffrer juste.</p>
+        <div class="fld" data-f="desc"><label for="desc">Description *</label><textarea id="desc" name="desc" placeholder="Ex. Terrassement pour une maison de 120 m², terrain en pente, accès camion possible, démarrage souhaité au printemps."></textarea><p class="err-msg" role="alert"></p></div>
+        <label class="drop" id="drop"><input type="file" id="photos" name="photos" accept="image/*" multiple><b>Ajoutez une photo du terrain (facultatif)</b><small>Jusqu'à 5 photos, 10 Mo chacune</small></label>
+        <div class="thumbs" id="thumbs"></div>
+        <p class="err-msg" data-err="photos" role="alert"></p>
+        <div class="f-nav"><button class="back" type="button" data-prev>← Retour</button><button class="btn btn-or btn-lg" type="button" data-next>Continuer →</button></div>
+        <p class="reass">Gratuit · Sans engagement · Rappel sous 24–48 h</p>
+      </fieldset>
+      <fieldset data-label="Rappel">
+        <legend>On vous rappelle</legend>
+        <p class="hint">Votre numéro et le meilleur moment pour vous joindre.</p>
+        <div class="row2">
+          <div class="fld" data-f="nom"><label for="nom">Nom</label><input id="nom" name="nom" autocomplete="name" placeholder="Facultatif"></div>
+          <div class="fld" data-f="tel"><label for="tel">Téléphone *</label><input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78"><p class="err-msg" role="alert"></p></div>
+        </div>
+        <div class="fld"><label id="slotL">Créneau de rappel</label><div class="opts slots" id="slots" role="radiogroup" aria-labelledby="slotL"></div></div>
+        <label class="consent"><input type="checkbox" id="rgpd" name="rgpd"><span>J'accepte que Bogey TP utilise ces informations pour me recontacter au sujet de ma demande. <a href="#confidentialite" class="lnk" data-modal>Politique de confidentialité</a></span></label>
+        <p class="err-msg" data-err="rgpd" role="alert"></p>
+        <div class="f-nav"><button class="back" type="button" data-prev>← Retour</button><button class="btn btn-or btn-lg" type="submit" id="sendBtn">Envoyer ma demande</button></div>
+        <p class="send-err" id="sendErr" role="alert" hidden><b>L'envoi n'a pas abouti.</b> Votre demande n'a pas été transmise. Appelez directement Loïc au <a href="tel:+33647823216" data-loc="form_erreur">06 47 82 32 16</a>, ou réessayez dans un instant.</p>
+        <p class="reass">Gratuit · Sans engagement · Rappel sous 24–48 h</p>
+        <!-- DÉMO : l'envoi n'est pas encore branché (voir app.js, fonction sendLead) -->
+      </fieldset>
+      <div class="thanks" id="thanks" tabindex="-1">
+        <div class="ok"><svg><use href="#i-check"/></svg></div>
+        <h3>Merci, c'est<br>bien reçu !</h3>
+        <p>On revient vers vous sur le créneau demandé. Si c'est urgent, appelez directement Loïc Bogey.</p>
+        <div class="ty-btns"><a class="btn btn-or btn-lg" href="tel:+33647823216" data-loc="merci"><svg><use href="#i-phone"/></svg>Appeler maintenant</a><button class="btn btn-line btn-lg" type="button" id="vcard"><svg><use href="#i-card"/></svg>Enregistrer le contact</button></div>
+        <dl id="recap"></dl>
+        <button class="back" type="button" id="again" style="margin-top:16px">Faire une autre demande</button>
+      </div>
+    </form>
+  </div>
+</section>

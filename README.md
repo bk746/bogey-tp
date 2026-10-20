@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bogey TP — site statique
 
-## Getting Started
+Le site livré (pixel près) vit dans **`site/`** : une page `index.html` (CSS + JS inline), médias en chemins relatifs. Il fonctionne en `file://` et en hébergement statique.
 
-First, run the development server:
+## Workflow
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Modifier les fragments dans **`site/src/`** (jamais `index.html` à la main).
+2. Reconstruire : `python3 site/build.py`
+3. Ouvrir `site/index.html` et comparer avec les captures de référence (`captures/v3/` à 1440, 390 et 360 px) lorsqu’elles sont disponibles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Import initial depuis le dossier « bogey-tp 2 » (Downloads). Découpe ponctuelle : `python3 site/split_sources.py` (à relancer seulement si vous repartez d’un `index.html` monolithique).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Avant mise en ligne
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Remplacer `FORM_ENDPOINT` dans `site/src/30-app.js` (Formspree).
+- Compléter hébergeur et éléments marqués `.tbc` / « À confirmer » avec le client.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le dossier **`app/`** à la racine est un projet Next.js par défaut (non utilisé pour la livraison statique).
